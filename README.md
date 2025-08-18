@@ -27,7 +27,7 @@ Additionally, it builds on the existing SageMaker ScriptProcessor API for tasks 
 - Extends `ScriptProcessor` with **`source_dir` support**
 - Accepts a **source directory** instead of just a single script
 - Supports bundling **dependencies / local folders**
-- Automatically generates a lightweight entrypoint script (`runproc.sh`)
+- Automatically generates a lightweight entrypoint script, i.e. `runproc.sh`
 - Cleans up temporary artifacts after execution
 
 ## 📦 Installation
