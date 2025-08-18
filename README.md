@@ -1,7 +1,7 @@
 # Bundled Script Processor
 
 
-An extension of the Amazon SageMaker [`ScriptProcessor`](https://sagemaker.readthedocs.io/en/stable/api/training/processing.html#sagemaker.processing.ScriptProcessor) 
+An extension of the Amazon SageMaker [ScriptProcessor](https://sagemaker.readthedocs.io/en/stable/api/training/processing.html#sagemaker.processing.ScriptProcessor) 
 that adds support for bundling a local `source_dir` (and optional dependencies) into a tarball, uploading it to S3, and 
 running it inside SageMaker Processing jobs. This makes it easier to organize your code into directories and 
 run it in SageMaker without manually managing uploads.
