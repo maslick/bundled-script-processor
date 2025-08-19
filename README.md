@@ -6,6 +6,15 @@ that adds support for bundling a local `source_dir` (and optional dependencies) 
 running it inside SageMaker Processing jobs. This makes it easier to organize your code into directories and 
 run it in SageMaker without manually managing uploads.
 
+---
+
+## ✨ Features
+- Extends `ScriptProcessor` with **`source_dir`** support (instead of just a single script)
+- Supports bundling **dependencies**, i.e. local folders
+- Automatically generates a lightweight entrypoint script, i.e. `runproc.sh`
+- Cleans up temporary artifacts after execution
+
+
 ## 🔍 How it works under the hood
 
 `BundledScriptProcessor` extends the normal `ScriptProcessor` flow by injecting an extra packaging step before execution.
@@ -24,14 +33,6 @@ run it in SageMaker without manually managing uploads.
 
 This design keeps the upload/extract/execute logic transparent to you, while still relying on SageMaker’s standard ProcessingJob mechanics.
 Additionally, it builds on the existing SageMaker ScriptProcessor API for tasks like compressing and uploading code to S3.
-
----
-
-## ✨ Features
-- Extends `ScriptProcessor` with **`source_dir`** support (instead of just a single script)
-- Supports bundling **dependencies**, i.e. local folders
-- Automatically generates a lightweight entrypoint script, i.e. `runproc.sh`
-- Cleans up temporary artifacts after execution
 
 ## 📦 Installation
 

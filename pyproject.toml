@@ -4,9 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "bundled-script-processor"
-version = "0.1.0"
+version = "0.2.1"
 description = "A SageMaker-compatible BundledScriptProcessor for running tar-bundled source dirs."
-readme = "README.md"
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.10"
 license = "MIT"
 authors = [
