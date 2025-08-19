@@ -1,5 +1,6 @@
 # Bundled Script Processor
 
+[![PyPI version](https://img.shields.io/pypi/v/bundled-script-processor.svg)](https://pypi.org/project/bundled-script-processor/)
 
 An extension of the Amazon SageMaker [ScriptProcessor](https://sagemaker.readthedocs.io/en/stable/api/training/processing.html#sagemaker.processing.ScriptProcessor) 
 that adds support for bundling a local `source_dir` (and optional dependencies) into a tarball, uploading it to S3, and 
