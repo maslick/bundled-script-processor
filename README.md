@@ -14,6 +14,7 @@ run it in SageMaker without manually managing uploads.
 - Automatically generates a lightweight entrypoint script, i.e. `runproc.sh`
 - Cleans up temporary artifacts after execution
 
+---
 
 ## 🔍 How it works under the hood
 
