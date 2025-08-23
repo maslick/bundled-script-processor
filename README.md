@@ -19,11 +19,11 @@ run it in SageMaker without manually managing uploads.
 
 ## 🔍 How it works under the hood
 
-`BundledScriptProcessor` extends the normal `ScriptProcessor` flow by injecting an extra packaging step before execution.
+`BundledScriptProcessor` extends the normal `ScriptProcessor` flow by injecting an extra packaging step before execution (in its `run` method).
 
-1. Bundle creation – It takes your `source_dir` (and any extra dependencies) and compresses them into a `sourcedir.tar.gz`.
-2. Upload to S3 – This tarball is uploaded to your SageMaker default bucket and mounted in the container as a `ProcessingInput` named "code".
-3. Custom entrypoint – A small `runproc.sh` script is generated and uploaded as a second `ProcessingInput` named "entrypoint". This script:
+1. Bundle creation – it takes your `source_dir` (and any extra dependencies) and compresses them into a `sourcedir.tar.gz`.
+2. Upload to S3 – this tarball is uploaded to your SageMaker default bucket (Sagemaker session) and mounted in the container as a `ProcessingInput` named "code".
+3. Custom entrypoint – a small `runproc.sh` script is generated and uploaded as a second `ProcessingInput` named "entrypoint". This script:
 
 	• Unpacks `sourcedir.tar.gz`
 
@@ -31,9 +31,9 @@ run it in SageMaker without manually managing uploads.
 
 	• Executes your Python entrypoint (main.py by default) with the specified command (e.g. ["python3"]) and any additional arguments.
 
-4. Entrypoint override – Finally, it overrides the default ScriptProcessor entrypoint to point to this generated shell script, so SageMaker runs it automatically when the job starts.
+4. Entrypoint override – finally, it overrides the default ScriptProcessor entrypoint to point to this generated shell script, so SageMaker runs it automatically when the job starts.
 
-This design keeps the upload/extract/execute logic transparent to you, while still relying on SageMaker’s standard ProcessingJob mechanics.
+This design keeps the upload/extract/execute logic transparent to you, while still relying on SageMaker’s standard `ProcessingJob` mechanics.
 Additionally, it builds on the existing SageMaker ScriptProcessor API for tasks like compressing and uploading code to S3.
 
 ## 📦 Installation
