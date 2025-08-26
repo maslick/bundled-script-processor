@@ -14,7 +14,7 @@ run it in SageMaker without manually managing uploads.
 - Supports bundling **dependencies**, i.e. local folders
 - Automatically generates a lightweight entrypoint script, i.e. `runproc.sh`
 - Cleans up temporary artifacts after execution
-- Supports [Local mode](https://aws.amazon.com/about-aws/whats-new/2023/12/sagemaker-studio-local-mode-docker/) (for testing Processing Jobs locally using docker-compose)
+- Supports [Local mode](https://aws.amazon.com/about-aws/whats-new/2023/12/sagemaker-studio-local-mode-docker/) for testing Processing Jobs locally using `docker-compose`
 
 ---
 
